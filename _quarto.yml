@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "Levant WEPs"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - summary_table.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+
