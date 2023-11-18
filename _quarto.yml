@@ -10,12 +10,22 @@ website:
         text: Home
       - summary_table.qmd
       - references.qmd
+    tools:
+      - icon: twitter
+        href: https://twitter.com/pagomba
+      - icon: github
+        href: https://github.com/pgomba/Levantine_WEPs
   site-url: 'https://pgomba.github.io'
   site-path: '/'
+  twitter-card:
+    creator: "@pagomba"
+    image: images/Levant_WEPS_graphical_abstract.png
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: darkly
     css: styles.css
     toc: true
 
