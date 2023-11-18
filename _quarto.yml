@@ -9,6 +9,9 @@ website:
       - href: index.qmd
         text: Home
       - summary_table.qmd
+      - references.qmd
+  site-url: 'https://pgomba.github.io'
+  site-path: '/'
 
 format:
   html:
