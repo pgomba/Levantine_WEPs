@@ -51,7 +51,7 @@ object<-Levant_WEPS_table%>%
   gt()%>%
   tab_header(
     title = md("A scientific review of Wild Edible Plants from the Levant - Summary Table"),
-    subtitle = md("Fr - Fruit, In - Inflorescences, Lf - Leaf, Rt - Root, Sd - Seed, St - Stems, Wp - Whole plant || F - Food, FA - Food additive, M - Medicinal || <br><br> Suggested citation: Gómez Barreiro, P., Coleshill, D., Abulaila, K.,; Howes, Howes, M.J.R., Hani, N., Ulian, T. (2023). A scientific review of Wild Edible Plants from the Levant. figshare. Dataset. https://doi.org/10.6084/m9.figshare.24101223.v1")
+    subtitle = md("Fr - Fruit, In - Inflorescences, Lf - Leaf, Rt - Root, Sd - Seed, St - Stems, Wp - Whole plant || F - Food, FA - Food additive, M - Medicinal <br><br> Suggested citation: Gómez Barreiro, P., Coleshill, D., Abulaila, K.,; Howes, Howes, M.J.R., Hani, N., Ulian, T. (2023). A scientific review of Wild Edible Plants from the Levant. figshare. Dataset. https://doi.org/10.6084/m9.figshare.24101223.v1")
   )%>%
   cols_align(
     align = "center",
