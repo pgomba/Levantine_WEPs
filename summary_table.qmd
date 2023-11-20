@@ -28,7 +28,7 @@ object<-Levant_WEPS_table%>%
                                             "<div style='line-height:14px'><span style='font-style:italic;font-size:16px'>",
                                             word(`Family / Scientific name`, 1,2,sep=" ") ,
                                             "</div> </a>
-        <div style='line-height:12px'><span style ='font-weight:bold;color:black;font-size:12px'>",
+        <div style='line-height:14px'><span style ='font-weight:bold;color:black;font-size:12px'>",
         authors,
         "</span></div>
         <div style='line-height:12px'><span style ='font-weight:bold;color:grey;font-size:10px'> IPNI: ",
