@@ -17,9 +17,12 @@ website:
         href: https://github.com/pgomba/Levantine_WEPs
   site-url: 'https://pgomba.github.io'
   site-path: '/'
+  open-graph: true
   twitter-card:
     creator: "@pagomba"
-    image: images/Levant_WEPS_graphical_abstract.png
+    image: images/card.png
+    card-style: summary_large_image
+    
 
 format:
   html:
