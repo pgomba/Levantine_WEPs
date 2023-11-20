@@ -4,7 +4,7 @@ title: "A scientific review of Wild Edible Plants from the Levant"
 
 Homepage for the "scientific review of Wild Edible Plants from the Levant" dataset. A list of 414 taxa traditionally used in the Levantine traditional diet, countries where they are used, plant parts, whether or not they have medicinal uses and provenance details. The dataset and references therein can be downloaded from [here](https://figshare.com/articles/dataset/A_scientific_review_of_Wild_Edible_Plants_from_the_Levant/24101223)
 
-![Graphical summary on the use of plant parts used in the dataset](images/Levant_WEPS_graphical_abstract.png)
+![*Gundelia tournefortii* plant thriving in the rocks. Pablo Gómez Barreiro © RBG Kew](card.png){fig-alt="Gundelia tournefortii plant thriving in the rocks" width="726"}
 
 # Background
 
