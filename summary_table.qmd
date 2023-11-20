@@ -18,15 +18,27 @@ remove_nums<- function(input_string) {
 
 
 object<-Levant_WEPS_table%>%
-  mutate(word_count=str_count(`Family / Scientific name`, "\\S+"),
-         url=paste0("https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:",Kew_id),
+  drop_na(`Family / Scientific name`)%>%
+  
+  mutate(url=paste0("https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:",Kew_id),
          Crop=ifelse(grepl("†",`Family / Scientific name`),"*",""),
-         `Family / Scientific name`= ifelse(word_count==1,`Family / Scientific name`,word(`Family / Scientific name`, 1,2,sep=" ")),
-         `Family / Scientific name`= ifelse(is.na(Kew_id),`Family / Scientific name`,sprintf('<p><a href="%s"><em>%s</em></a>', url, `Family / Scientific name`)),
+         authors=word(start = 3,end = -1, `Family / Scientific name`),
+         authors=gsub("†","",authors),
+         `Family / Scientific name`= ifelse(is.na(Kew_id),`Family / Scientific name`, paste0('<a href="http://google.com">',
+                                            "<div style='line-height:10px'><span style='font-style:italic;font-size:14px'>",
+                                            word(`Family / Scientific name`, 1,2,sep=" ") ,
+                                            "</div> </a>
+        <div style='line-height:14px'><span style ='font-weight:bold;color:black;font-size:10px'>",
+        authors,
+        "</span></div>
+        <div style='line-height:14px'><span style ='font-weight:bold;color:grey;font-size:10px'> IPNI: ",
+        Kew_id,
+        "</span></div>")),
+
          `Family / Scientific name`= map(`Family / Scientific name`, gt::html))%>%
   filter(`Family / Scientific name`!="NA")%>%
   rename(IPNI=Kew_id)%>%
-  select(-url,-IPNI,-word_count)%>%
+  select(-url,-IPNI,-authors)%>%
   filter(`Family / Scientific name`!="NA")%>%
   mutate_at(c("Edible use by country", "Edible part(s) used","Medicinal use","EcBot categories","Native in the Levant?"), ~replace_na(.,""))%>%
   mutate_at(c("Edible use by country", "Edible part(s) used","Medicinal use"),remove_nums)%>% 
@@ -47,7 +59,7 @@ object<-Levant_WEPS_table%>%
          `Medicinal use`=ifelse(`Medicinal use`=="","no",`Medicinal use`))%>%
   mutate(`Edible use by country`=ifelse(`Edible use by country`=="","no",`Edible use by country`),
          `Native in the Levant?`=ifelse(`Native in the Levant?`=="Yes","Yes",""))%>%
- 
+  
   gt()%>%
   tab_header(
     title = md("A scientific review of Wild Edible Plants from the Levant - Summary Table"),
@@ -63,19 +75,18 @@ object<-Levant_WEPS_table%>%
   )%>%
   
   opt_align_table_header(align = "left")%>%
-    fmt_image(
-      columns = `Edible use by country`,
-      path = "images/",
-      file_pattern = "{x}.png")%>%
-    fmt_image(
-      columns = `Medicinal use`,
-      path = "images/",
-      file_pattern = "{x}.png")%>%
+  fmt_image(
+    columns = `Edible use by country`,
+    path = "images/",
+    file_pattern = "{x}.png")%>%
+  fmt_image(
+    columns = `Medicinal use`,
+    path = "images/",
+    file_pattern = "{x}.png")%>%
   tab_footnote(
     footnote = "Identified as crops via Food and Agriculture Organization's crop list (FAO, 2015)",
     locations = cells_column_labels(
       columns = Crop))
-
 ```
 
 ```{r echo=FALSE}
