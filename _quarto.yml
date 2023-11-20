@@ -20,7 +20,7 @@ website:
   open-graph: true
   twitter-card:
     creator: "@pagomba"
-    image: images/card.png
+    image: card.png
     card-style: summary_large_image
     
 
