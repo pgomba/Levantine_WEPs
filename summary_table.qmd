@@ -25,13 +25,13 @@ object<-Levant_WEPS_table%>%
          authors=word(start = 3,end = -1, `Family / Scientific name`),
          authors=gsub("†","",authors),
          `Family / Scientific name`= ifelse(is.na(Kew_id),`Family / Scientific name`, paste0("<a href=",url,">",
-                                            "<div style='line-height:14px'><span style='font-style:italic;font-size:16px'>",
+                                            "<div style='line-height:125%'><span style='font-style:italic;font-size:16px'>",
                                             word(`Family / Scientific name`, 1,2,sep=" ") ,
                                             "</div> </a>
-        <div style='line-height:14px'><span style ='font-weight:bold;color:black;font-size:12px'>",
+        <div style='line-height:110%'><span style ='font-weight:bold;color:black;font-size:12px'>",
         authors,
         "</span></div>
-        <div style='line-height:12px'><span style ='font-weight:bold;color:grey;font-size:10px'> IPNI: ",
+        <div style='line-height:100%'><span style ='font-weight:bold;color:grey;font-size:12px'> IPNI: ",
         Kew_id,
         "</span></div>")),
 
