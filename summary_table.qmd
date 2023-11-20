@@ -24,7 +24,7 @@ object<-Levant_WEPS_table%>%
          Crop=ifelse(grepl("†",`Family / Scientific name`),"*",""),
          authors=word(start = 3,end = -1, `Family / Scientific name`),
          authors=gsub("†","",authors),
-         `Family / Scientific name`= ifelse(is.na(Kew_id),`Family / Scientific name`, paste0('<a href="http://google.com">',
+         `Family / Scientific name`= ifelse(is.na(Kew_id),`Family / Scientific name`, paste0("<a href=",url,">",
                                             "<div style='line-height:10px'><span style='font-style:italic;font-size:14px'>",
                                             word(`Family / Scientific name`, 1,2,sep=" ") ,
                                             "</div> </a>
