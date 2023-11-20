@@ -6,7 +6,7 @@ Homepage for the "scientific review of Wild Edible Plants from the Levant" datas
 
 ![Graphical summary on the use of plant parts used in the dataset](images/Levant_WEPS_graphical_abstract.png)
 
-# Background 
+# Background
 
 Located in the eastern side of the Mediterranean Sea, the Levant region is known as one of the cradles of civilization. Much of this success was due to the high plant diversity of this area (Medail & Quezel, 1999), which allowed humans to transition from foraging into cultivation systems (Abbo *et al*., 2011). Crops of current global importance such as wheat, barley and a range of pulses originated in the region and underwent centuries of domestication. These remain a key element of today\\'s traditional Levantine cuisine which over time has been shaped by the rich mix of cultures, religions exchanging traditions, and the influence of the Mediterranean and its plants (Gaul *et al*., 2021). WEPs often complement traditional Levantine dishes, with local communities still relying on their collection not only for their use in their traditional diets, but also for their medicinal value and their potential to provide a source of income. However, the traditional knowledge around the use of these species is at risk of disappearing due to food market globalization and the disinterest of younger generations (Hadjichambis *et al*., 2008). In addition, WEPs are often harvested in unsustainable ways, threatened by habitat loss due to urbanization, aggressive agricultural practices, overgrazing and politically driven mass migrations.
 
@@ -26,4 +26,4 @@ Some wild plants have been subjected to certain degrees of domestication after y
 
 # Suggested citation
 
-Suggested citation: Gómez Barreiro, P., Coleshill, D., Abulaila, K.,. Howes, Howes, M.J.R., Hani, N., Ulian, T. (2023). A scientific review of Wild Edible Plants from the Levant. figshare. Dataset. <https://doi.org/10.6084/m9.figshare.24101223.v1>
+Suggested citation: Gómez Barreiro, P., Coleshill, D., Abulaila, K.,. Howes, M.J.R., Hani, N., Ulian, T. (2023). A scientific review of Wild Edible Plants from the Levant. figshare. Dataset. <https://doi.org/10.6084/m9.figshare.24101223.v1>

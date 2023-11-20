@@ -9,7 +9,6 @@ library(gt)
 
 Levant_WEPS_table <- read_excel("Levant_WEPS_table.xlsx", 
                                 sheet = "Sheet2")
-View(Levant_WEPS_table)
 
 remove_nums<- function(input_string) {
   result_string <- gsub("[0-9()–,]", "", input_string)
@@ -21,6 +20,7 @@ remove_nums<- function(input_string) {
 object<-Levant_WEPS_table%>%
   mutate(word_count=str_count(`Family / Scientific name`, "\\S+"),
          url=paste0("https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:",Kew_id),
+         Crop=ifelse(grepl("†",`Family / Scientific name`),"*",""),
          `Family / Scientific name`= ifelse(word_count==1,`Family / Scientific name`,word(`Family / Scientific name`, 1,2,sep=" ")),
          `Family / Scientific name`= ifelse(is.na(Kew_id),`Family / Scientific name`,sprintf('<p><a href="%s"><em>%s</em></a>', url, `Family / Scientific name`)),
          `Family / Scientific name`= map(`Family / Scientific name`, gt::html))%>%
@@ -47,7 +47,7 @@ object<-Levant_WEPS_table%>%
          `Medicinal use`=ifelse(`Medicinal use`=="","no",`Medicinal use`))%>%
   mutate(`Edible use by country`=ifelse(`Edible use by country`=="","no",`Edible use by country`),
          `Native in the Levant?`=ifelse(`Native in the Levant?`=="Yes","Yes",""))%>%
-
+ 
   gt()%>%
   tab_header(
     title = md("A scientific review of Wild Edible Plants from the Levant - Summary Table"),
@@ -70,7 +70,12 @@ object<-Levant_WEPS_table%>%
     fmt_image(
       columns = `Medicinal use`,
       path = "images/",
-      file_pattern = "{x}.png")
+      file_pattern = "{x}.png")%>%
+  tab_footnote(
+    footnote = "Identified as crops via Food and Agriculture Organization's crop list (FAO, 2015)",
+    locations = cells_column_labels(
+      columns = Crop))
+
 ```
 
 ```{r echo=FALSE}
