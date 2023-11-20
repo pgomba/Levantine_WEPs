@@ -15,7 +15,7 @@ website:
         href: https://twitter.com/pagomba
       - icon: github
         href: https://github.com/pgomba/Levantine_WEPs
-  site-url: 'https://pgomba.github.io'
+  site-url: 'https://pgomba.github.io/Levantine_WEPs'
   site-path: '/'
   open-graph: true
   twitter-card:
